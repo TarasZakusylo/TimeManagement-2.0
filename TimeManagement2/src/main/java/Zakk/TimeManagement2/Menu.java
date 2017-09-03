@@ -9,12 +9,23 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.SwingConstants;
 
 public class Menu extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 
 	private JLabel l_fon;
+	private JLabel l_kartunka;
+	private JButton b_NovaPodia;
+	private JButton b_PoperedniPodii;
+	private JButton b_PruynattaRihen;
+	private JButton b_Calendar;
+	private JButton b_Prognozyvanna;
+	private JButton b_MaybutniPodii;
+	private JButton b_Zvit;
+	private JButton b_Nalahtuvanna;
+	private JButton b_Otocenna;
 
 	public Menu(String s) {
 		super(s);
@@ -25,87 +36,124 @@ public class Menu extends JFrame {
 		setLocationRelativeTo(null);
 		getContentPane().setLayout(null);
 
-		JButton b_Diagnistika = new JButton("Діагностика");
-		b_Diagnistika.setFont(new Font("Times New Roman", Font.ITALIC, 30));
-		b_Diagnistika.setForeground(new Color(255, 140, 0));
-		b_Diagnistika.addActionListener(new ActionListener() {
+		b_PoperedniPodii = new JButton("Попередні події");
+		b_PoperedniPodii.setFont(new Font("Impact", Font.PLAIN, 25));
+		b_PoperedniPodii.setForeground(new Color(0, 0, 0));
+		b_PoperedniPodii.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new Diagnostika("Дієтолог");
+				// new PoperedniPodii("Times");
 				setVisible(false);
 			}
 		});
-		b_Diagnistika.setBounds(12, 55, 282, 42);
-		getContentPane().add(b_Diagnistika);
+		b_PoperedniPodii.setBounds(37, 125, 282, 42);
+		getContentPane().add(b_PoperedniPodii);
 
-		JButton b_Likyvanna = new JButton("Лікування");
-		b_Likyvanna.setFont(new Font("Times New Roman", Font.ITALIC, 30));
-		b_Likyvanna.setForeground(new Color(255, 140, 0));
-		b_Likyvanna.addActionListener(new ActionListener() {
+		b_PruynattaRihen = new JButton("Прийняття рішень");
+		b_PruynattaRihen.setFont(new Font("Impact", Font.PLAIN, 25));
+		b_PruynattaRihen.setForeground(new Color(0, 0, 0));
+		b_PruynattaRihen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new Likyvanna("Дієтолог");
+				// new PruynattaRihen("Times");
 				setVisible(false);
 			}
 		});
-		b_Likyvanna.setBounds(12, 140, 282, 42);
-		getContentPane().add(b_Likyvanna);
+		b_PruynattaRihen.setBounds(37, 210, 282, 42);
+		getContentPane().add(b_PruynattaRihen);
 
-		JButton b_Vegeterianstvo = new JButton("Вегетеріанство");
-		b_Vegeterianstvo.setFont(new Font("Times New Roman", Font.ITALIC, 30));
-		b_Vegeterianstvo.setForeground(new Color(255, 140, 0));
-		b_Vegeterianstvo.addActionListener(new ActionListener() {
+		b_Calendar = new JButton("Календар");
+		b_Calendar.setFont(new Font("Impact", Font.PLAIN, 25));
+		b_Calendar.setForeground(new Color(0, 0, 0));
+		b_Calendar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new Vegeterianstvo("Дієтолог");
+				// new Calendar("Times");
 				setVisible(false);
 			}
 		});
-		b_Vegeterianstvo.setBounds(12, 235, 282, 42);
-		getContentPane().add(b_Vegeterianstvo);
+		b_Calendar.setBounds(667, 292, 282, 42);
+		getContentPane().add(b_Calendar);
 
-		JButton b_PerioduRozvutku = new JButton("Періоди розвитку");
-		b_PerioduRozvutku.setFont(new Font("Times New Roman", Font.ITALIC, 30));
-		b_PerioduRozvutku.setForeground(new Color(255, 140, 0));
-		b_PerioduRozvutku.addActionListener(new ActionListener() {
+		b_Prognozyvanna = new JButton("Прогнозування");
+		b_Prognozyvanna.setFont(new Font("Impact", Font.PLAIN, 25));
+		b_Prognozyvanna.setForeground(new Color(0, 0, 0));
+		b_Prognozyvanna.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new PerioduRozvutku("Дієтолог");
+				// new Prognozyvanna("Times");
 				setVisible(false);
 			}
 		});
-		b_PerioduRozvutku.setBounds(12, 324, 282, 42);
-		getContentPane().add(b_PerioduRozvutku);
+		b_Prognozyvanna.setBounds(667, 210, 282, 42);
+		getContentPane().add(b_Prognozyvanna);
 
-		JButton b_Racion = new JButton("Раціон");
-		b_Racion.setFont(new Font("Times New Roman", Font.ITALIC, 30));
-		b_Racion.setForeground(new Color(255, 140, 0));
-		b_Racion.addActionListener(new ActionListener() {
+		b_MaybutniPodii = new JButton("Майбутні події");
+		b_MaybutniPodii.setFont(new Font("Impact", Font.PLAIN, 25));
+		b_MaybutniPodii.setForeground(new Color(0, 0, 0));
+		b_MaybutniPodii.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new Racion("Дієтолог");
+				// new MaybutniPodii("Times");
 				setVisible(false);
 			}
 		});
-		b_Racion.setBounds(12, 407, 282, 42);
-		getContentPane().add(b_Racion);
+		b_MaybutniPodii.setBounds(667, 125, 282, 42);
+		getContentPane().add(b_MaybutniPodii);
 
-		JButton b_ZvernennaDoLakara = new JButton("Звернення до лікаря");
-		b_ZvernennaDoLakara.setFont(new Font("Times New Roman", Font.ITALIC, 29));
-		b_ZvernennaDoLakara.setForeground(new Color(255, 140, 0));
-		b_ZvernennaDoLakara.addActionListener(new ActionListener() {
+		b_NovaPodia = new JButton("Вказати нову подію");
+		b_NovaPodia.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				// new NovaPodia("Times");
+				setVisible(false);
+			}
+		});
+		b_NovaPodia.setForeground(Color.BLACK);
+		b_NovaPodia.setFont(new Font("Impact", Font.PLAIN, 25));
+		b_NovaPodia.setBounds(65, 40, 843, 42);
+		getContentPane().add(b_NovaPodia);
+
+		b_Zvit = new JButton("Звіт");
+		b_Zvit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new ZvernennaDoLakara("Дієтолог");
+				// new Zvit("Times");
 				setVisible(false);
 			}
 		});
-		b_ZvernennaDoLakara.setBounds(12, 486, 282, 42);
-		getContentPane().add(b_ZvernennaDoLakara);
+		b_Zvit.setForeground(Color.BLACK);
+		b_Zvit.setFont(new Font("Impact", Font.PLAIN, 25));
+		b_Zvit.setBounds(37, 377, 282, 42);
+		getContentPane().add(b_Zvit);
 
-		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon("res/fon/Menu1.jpg"));
-		label.setBounds(294, 54, 700, 511);
-		getContentPane().add(label);
+		b_Nalahtuvanna = new JButton("Налаштування");
+		b_Nalahtuvanna.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// new Nalahtuvanna("Times");
+				setVisible(false);
+			}
+		});
+		b_Nalahtuvanna.setForeground(Color.BLACK);
+		b_Nalahtuvanna.setFont(new Font("Impact", Font.PLAIN, 25));
+		b_Nalahtuvanna.setBounds(667, 377, 282, 42);
+		getContentPane().add(b_Nalahtuvanna);
+
+		b_Otocenna = new JButton("Оточення");
+		b_Otocenna.setFont(new Font("Impact", Font.PLAIN, 25));
+		b_Otocenna.setForeground(new Color(0, 0, 0));
+		b_Otocenna.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				// new Otocenna("Times");
+				setVisible(false);
+			}
+		});
+		b_Otocenna.setBounds(37, 292, 282, 42);
+		getContentPane().add(b_Otocenna);
+
+		l_kartunka = new JLabel("");
+		l_kartunka.setHorizontalAlignment(SwingConstants.CENTER);
+		l_kartunka.setIcon(new ImageIcon("C:\\Users\\ZakkZakk\\Desktop\\vremya-dengi.png"));
+		l_kartunka.setBounds(-1, 263, 995, 302);
+		getContentPane().add(l_kartunka);
 
 		l_fon = new JLabel("");
 		l_fon.setForeground(Color.WHITE);
-		l_fon.setIcon(new ImageIcon("res/fon/Reestracia.png"));
-		l_fon.setBounds(-1, 0, 995, 572);
+		l_fon.setIcon(new ImageIcon("C:\\Users\\ZakkZakk\\Desktop\\fon_Avtoruzacia.jpg"));
+		l_fon.setBounds(-1, 0, 995, 565);
 		getContentPane().add(l_fon);
 
 		setVisible(true);

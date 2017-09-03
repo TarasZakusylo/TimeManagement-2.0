@@ -116,7 +116,7 @@ public class Avtoruzacia extends JFrame {
 					scanner_Avtoruzacia.close();
 
 					if (s_Password.equals(s_Avtoruzacia)) {
-						JOptionPane.showMessageDialog(null, "Вітаю, Ви в системі");
+//						JOptionPane.showMessageDialog(null, "Вітаю, Ви в системі");
 
 						String s_Korustuvac = Reading_Name + " " + Reading_Prizvusko;
 
@@ -158,7 +158,6 @@ public class Avtoruzacia extends JFrame {
 		b_Ochustutu = new JButton("Очистити");
 		b_Ochustutu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				textField_Login.setText("");
 				passwordField_Password.setText("");
 			}
 		});

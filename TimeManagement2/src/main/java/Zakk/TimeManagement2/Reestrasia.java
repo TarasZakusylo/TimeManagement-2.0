@@ -1,5 +1,6 @@
 package Zakk.TimeManagement2;
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -14,7 +15,6 @@ import javax.swing.JOptionPane;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
-import java.awt.Color;
 
 public class Reestrasia extends JFrame {
 
@@ -31,8 +31,8 @@ public class Reestrasia extends JFrame {
 	private JLabel label_email;
 	private JTextField textField_mail;
 	private JButton button_Gotovo;
-
 	private JLabel l_fon;
+	private JLabel l_kartunka;
 
 	public Reestrasia(String s) {
 		super(s);
@@ -206,14 +206,14 @@ public class Reestrasia extends JFrame {
 		button_Gotovo.setFont(new Font("Impact", Font.PLAIN, 25));
 		getContentPane().add(button_Gotovo);
 
-		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon("C:\\Users\\ZakkZakk\\Desktop\\kartunka_Avtoruzacia.png"));
-		label.setBounds(449, 0, 546, 565);
-		getContentPane().add(label);
+		l_kartunka = new JLabel("");
+		l_kartunka.setIcon(new ImageIcon("res/kartunka/kartunka_Reestracia.png"));
+		l_kartunka.setBounds(449, 0, 546, 565);
+		getContentPane().add(l_kartunka);
 
 		l_fon = new JLabel("");
 		l_fon.setForeground(Color.WHITE);
-		l_fon.setIcon(new ImageIcon("C:\\Users\\ZakkZakk\\Desktop\\fon_Avtoruzacia.jpg"));
+		l_fon.setIcon(new ImageIcon("res/fon/fon_Avtoruzacia.jpg"));
 		l_fon.setBounds(0, 0, 995, 565);
 		getContentPane().add(l_fon);
 
