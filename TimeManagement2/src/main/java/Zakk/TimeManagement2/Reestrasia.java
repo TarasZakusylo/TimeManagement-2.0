@@ -44,81 +44,85 @@ public class Reestrasia extends JFrame {
 		getContentPane().setLayout(null);
 
 		label_NazvaVikna = new JLabel("Реєстрація");
-		label_NazvaVikna.setForeground(new Color(255, 0, 255));
-		label_NazvaVikna.setBounds(12, 30, 497, 88);
-		label_NazvaVikna.setFont(new Font("Monotype Corsiva", Font.BOLD, 55));
+		label_NazvaVikna.setForeground(new Color(0, 0, 0));
+		label_NazvaVikna.setBounds(12, 13, 497, 88);
+		label_NazvaVikna.setFont(new Font("Impact", Font.PLAIN, 55));
 		label_NazvaVikna.setHorizontalAlignment(SwingConstants.CENTER);
 		getContentPane().add(label_NazvaVikna);
 
 		label_Login = new JLabel("Логін");
-		label_Login.setForeground(new Color(255, 0, 255));
-		label_Login.setBounds(12, 149, 231, 29);
+		label_Login.setForeground(new Color(165, 42, 42));
+		label_Login.setBounds(68, 122, 369, 29);
 		label_Login.setHorizontalAlignment(SwingConstants.CENTER);
 		label_Login.setFont(new Font("Times New Roman", Font.ITALIC, 30));
 		getContentPane().add(label_Login);
 
 		textField_Login = new JTextField();
-		textField_Login.setBounds(12, 201, 231, 36);
+		textField_Login.setFont(new Font("Times New Roman", Font.ITALIC, 20));
+		textField_Login.setBounds(68, 164, 369, 36);
 		textField_Login.setToolTipText("");
 		textField_Login.setText("1");
 		textField_Login.setColumns(10);
 		getContentPane().add(textField_Login);
 
 		label_Password = new JLabel("Пароль");
-		label_Password.setForeground(new Color(255, 0, 255));
-		label_Password.setBounds(12, 294, 231, 29);
+		label_Password.setForeground(new Color(165, 42, 42));
+		label_Password.setBounds(68, 213, 369, 29);
 		label_Password.setHorizontalAlignment(SwingConstants.CENTER);
 		label_Password.setFont(new Font("Times New Roman", Font.ITALIC, 30));
 		getContentPane().add(label_Password);
 
 		passwordField_Password = new JPasswordField();
-		passwordField_Password.setBounds(12, 347, 231, 36);
+		passwordField_Password.setFont(new Font("Times New Roman", Font.ITALIC, 20));
+		passwordField_Password.setBounds(68, 255, 369, 36);
 		passwordField_Password.setToolTipText("");
 		passwordField_Password.setText("1");
 		getContentPane().add(passwordField_Password);
 
 		button_Nazad = new JButton("Назад");
-		button_Nazad.setForeground(new Color(255, 165, 0));
+		button_Nazad.setForeground(new Color(0, 0, 0));
 		button_Nazad.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				new Avtoruzacia("Times");
 				setVisible(false);
 			}
 		});
-		button_Nazad.setBounds(12, 446, 231, 36);
-		button_Nazad.setFont(new Font("Times New Roman", Font.ITALIC, 30));
+		button_Nazad.setBounds(34, 501, 219, 36);
+		button_Nazad.setFont(new Font("Impact", Font.PLAIN, 25));
 		getContentPane().add(button_Nazad);
 
 		label_PIP = new JLabel("Ім'я та Прізвище");
-		label_PIP.setForeground(new Color(255, 0, 255));
-		label_PIP.setBounds(278, 149, 231, 29);
+		label_PIP.setForeground(new Color(165, 42, 42));
+		label_PIP.setBounds(68, 304, 369, 29);
 		label_PIP.setHorizontalAlignment(SwingConstants.CENTER);
 		label_PIP.setFont(new Font("Times New Roman", Font.ITALIC, 30));
 		getContentPane().add(label_PIP);
 
 		textField_PIP = new JTextField();
-		textField_PIP.setBounds(278, 201, 231, 36);
+		textField_PIP.setFont(new Font("Times New Roman", Font.ITALIC, 20));
+		textField_PIP.setBounds(68, 346, 369, 36);
 		textField_PIP.setToolTipText("");
 		textField_PIP.setText("1");
 		textField_PIP.setColumns(10);
 		getContentPane().add(textField_PIP);
 
 		label_email = new JLabel("e-mail");
-		label_email.setForeground(new Color(255, 0, 255));
-		label_email.setBounds(278, 294, 231, 29);
+		label_email.setForeground(new Color(165, 42, 42));
+		label_email.setBounds(68, 395, 369, 29);
 		label_email.setHorizontalAlignment(SwingConstants.CENTER);
 		label_email.setFont(new Font("Times New Roman", Font.ITALIC, 30));
 		getContentPane().add(label_email);
 
 		textField_mail = new JTextField();
-		textField_mail.setBounds(278, 347, 231, 36);
+		textField_mail.setFont(new Font("Times New Roman", Font.ITALIC, 20));
+		textField_mail.setBounds(68, 437, 369, 36);
 		textField_mail.setToolTipText("");
 		textField_mail.setText("1");
 		getContentPane().add(textField_mail);
 
 		button_Gotovo = new JButton("Готово");
-		button_Gotovo.setForeground(new Color(255, 165, 0));
-		button_Gotovo.setBounds(278, 446, 231, 36);
+		button_Gotovo.setForeground(new Color(0, 0, 0));
+		button_Gotovo.setBounds(252, 501, 214, 36);
 		button_Gotovo.addActionListener(new ActionListener() {
 
 			private String s_Login;
@@ -186,7 +190,7 @@ public class Reestrasia extends JFrame {
 							formatter_reestracia.close();
 
 							JOptionPane.showMessageDialog(null, "Зареєстровано");
-							new Avtor("Дієтолог");
+							new Avtoruzacia("Times");
 							setVisible(false);
 
 						} else {
@@ -199,18 +203,18 @@ public class Reestrasia extends JFrame {
 
 			}
 		});
-		button_Gotovo.setFont(new Font("Times New Roman", Font.ITALIC, 30));
+		button_Gotovo.setFont(new Font("Impact", Font.PLAIN, 25));
 		getContentPane().add(button_Gotovo);
 
 		JLabel label = new JLabel("");
-		label.setIcon(new ImageIcon("res/fon/Reestracia1.jpg"));
-		label.setBounds(552, 34, 430, 505);
+		label.setIcon(new ImageIcon("C:\\Users\\ZakkZakk\\Desktop\\kartunka_Avtoruzacia.png"));
+		label.setBounds(449, 0, 546, 565);
 		getContentPane().add(label);
 
 		l_fon = new JLabel("");
 		l_fon.setForeground(Color.WHITE);
-		l_fon.setIcon(new ImageIcon("res/fon/Reestracia.png"));
-		l_fon.setBounds(-1, 0, 995, 572);
+		l_fon.setIcon(new ImageIcon("C:\\Users\\ZakkZakk\\Desktop\\fon_Avtoruzacia.jpg"));
+		l_fon.setBounds(0, 0, 995, 565);
 		getContentPane().add(l_fon);
 
 		setVisible(true);

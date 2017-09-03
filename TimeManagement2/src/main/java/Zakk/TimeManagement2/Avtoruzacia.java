@@ -140,7 +140,7 @@ public class Avtoruzacia extends JFrame {
 			}
 		});
 		b_Yvijtu.setFont(new Font("Impact", Font.PLAIN, 25));
-		b_Yvijtu.setBounds(63, 487, 185, 36);
+		b_Yvijtu.setBounds(33, 487, 215, 36);
 		getContentPane().add(b_Yvijtu);
 
 		b_Reestracia = new JButton("Реєстрація");
@@ -152,7 +152,7 @@ public class Avtoruzacia extends JFrame {
 			}
 		});
 		b_Reestracia.setFont(new Font("Impact", Font.PLAIN, 25));
-		b_Reestracia.setBounds(247, 487, 185, 36);
+		b_Reestracia.setBounds(247, 487, 215, 36);
 		getContentPane().add(b_Reestracia);
 
 		b_Ochustutu = new JButton("Очистити");
