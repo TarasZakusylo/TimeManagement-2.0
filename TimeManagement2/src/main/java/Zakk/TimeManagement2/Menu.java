@@ -65,7 +65,7 @@ public class Menu extends JFrame {
 		b_Calendar.setForeground(new Color(0, 0, 0));
 		b_Calendar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// new Calendar("Times");
+				new Calendar("Times");
 				setVisible(false);
 			}
 		});
