@@ -41,7 +41,7 @@ public class Menu extends JFrame {
 		b_PoperedniPodii.setForeground(new Color(0, 0, 0));
 		b_PoperedniPodii.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				// new PoperedniPodii("Times");
+				new PoperedniPodii("Times");
 				setVisible(false);
 			}
 		});
@@ -53,7 +53,7 @@ public class Menu extends JFrame {
 		b_PruynattaRihen.setForeground(new Color(0, 0, 0));
 		b_PruynattaRihen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				// new PruynattaRihen("Times");
+				new PruynattaRihen("Times");
 				setVisible(false);
 			}
 		});
@@ -77,7 +77,7 @@ public class Menu extends JFrame {
 		b_Prognozyvanna.setForeground(new Color(0, 0, 0));
 		b_Prognozyvanna.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// new Prognozyvanna("Times");
+				new Prognozyvanna("Times");
 				setVisible(false);
 			}
 		});
@@ -89,7 +89,7 @@ public class Menu extends JFrame {
 		b_MaybutniPodii.setForeground(new Color(0, 0, 0));
 		b_MaybutniPodii.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// new MaybutniPodii("Times");
+				new MaybutniPodii("Times");
 				setVisible(false);
 			}
 		});
@@ -99,7 +99,7 @@ public class Menu extends JFrame {
 		b_NovaPodia = new JButton("Вказати нову подію");
 		b_NovaPodia.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				// new NovaPodia("Times");
+				new NovaPodia("Times");
 				setVisible(false);
 			}
 		});
@@ -111,7 +111,7 @@ public class Menu extends JFrame {
 		b_Zvit = new JButton("Звіт");
 		b_Zvit.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// new Zvit("Times");
+				new Zvit("Times");
 				setVisible(false);
 			}
 		});
@@ -123,7 +123,7 @@ public class Menu extends JFrame {
 		b_Nalahtuvanna = new JButton("Налаштування");
 		b_Nalahtuvanna.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// new Nalahtuvanna("Times");
+				new Nalahtuvanna("Times");
 				setVisible(false);
 			}
 		});
@@ -137,7 +137,7 @@ public class Menu extends JFrame {
 		b_Otocenna.setForeground(new Color(0, 0, 0));
 		b_Otocenna.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				// new Otocenna("Times");
+				new Otocenna("Times");
 				setVisible(false);
 			}
 		});

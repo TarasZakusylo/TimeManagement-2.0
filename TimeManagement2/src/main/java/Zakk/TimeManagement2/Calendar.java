@@ -33,6 +33,9 @@ public class Calendar extends JFrame implements ItemListener {
 			"October", "November", "December" };
 	private JButton btnNewButton;
 
+	private JButton b_menu;
+	private JLabel l_komentar;
+
 	@SuppressWarnings("deprecation")
 
 	public Calendar(String s) {
@@ -77,27 +80,27 @@ public class Calendar extends JFrame implements ItemListener {
 		l_kartunka = new JLabel("");
 		l_kartunka.setBounds(0, 319, 994, 247);
 		l_kartunka.setHorizontalAlignment(SwingConstants.CENTER);
-		l_kartunka.setIcon(new ImageIcon("C:\\Users\\ZakkZakk\\Desktop\\analytics.png"));
+		l_kartunka.setIcon(new ImageIcon("res/kartunka/kartunta_Calendar.png"));
 		getContentPane().add(l_kartunka);
 
-		JLabel l_komentar = new JLabel("Оберіть, буль ласка, дату, що Вас цікавить :");
+		l_komentar = new JLabel("Оберіть, буль ласка, дату, що Вас цікавить :");
 		l_komentar.setForeground(new Color(165, 42, 42));
 		l_komentar.setHorizontalAlignment(SwingConstants.CENTER);
 		l_komentar.setFont(new Font("Times New Roman", Font.ITALIC, 30));
 		l_komentar.setBounds(102, 47, 793, 42);
 		getContentPane().add(l_komentar);
 
-		JButton button = new JButton("Меню");
-		button.addActionListener(new ActionListener() {
+		b_menu = new JButton("Меню");
+		b_menu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				new Menu("Times");
 				setVisible(false);
 			}
 		});
-		button.setForeground(Color.BLACK);
-		button.setFont(new Font("Impact", Font.PLAIN, 25));
-		button.setBounds(712, 0, 282, 42);
-		getContentPane().add(button);
+		b_menu.setForeground(Color.BLACK);
+		b_menu.setFont(new Font("Impact", Font.PLAIN, 25));
+		b_menu.setBounds(712, 0, 282, 42);
+		getContentPane().add(b_menu);
 
 		btnNewButton = new JButton("Сьогодні");
 		btnNewButton.setFont(new Font("Impact", Font.PLAIN, 20));
@@ -114,7 +117,7 @@ public class Calendar extends JFrame implements ItemListener {
 		l_fon = new JLabel("");
 		l_fon.setBounds(0, 0, 994, 566);
 		l_fon.setForeground(Color.WHITE);
-		l_fon.setIcon(new ImageIcon("C:\\Users\\ZakkZakk\\Desktop\\fon_Avtoruzacia.jpg"));
+		l_fon.setIcon(new ImageIcon("res/fon/fon_Avtoruzacia.jpg"));
 		getContentPane().add(l_fon);
 
 		setVisible(true);
