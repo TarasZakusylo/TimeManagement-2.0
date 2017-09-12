@@ -137,7 +137,7 @@ public class Menu extends JFrame {
 		b_Otocenna.setForeground(new Color(0, 0, 0));
 		b_Otocenna.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new Otocenna("Times");
+				new OtocennaOsnova();
 				setVisible(false);
 			}
 		});
