@@ -78,19 +78,20 @@ public class NovaPodia extends JFrame {
 	private int i_slider_Pruoritet = 1;
 
 	private Formatter formatter_dani;
-	private Scanner scanner_Korustuvac;
-	private String[][] Reading_PIP = new String[1][2];
-	private String Reading_Name;
-	private String Reading_Prizvusko;
-	private String PIP;
+	private static  Scanner scanner_Korustuvac;
+	private static String[][] Reading_PIP = new String[1][2];
+	private static String Reading_Name;
+	private static String Reading_Prizvusko;
+	private static String PIP;
 	private Scanner scanner_Dani;
-	String[][] Reading_Dani = new String[1][3];
+	String[][] Reading_Dani = new String[1][4];
 	private String Reading_1;
 	private String Reading_2;
 	private String Reading_3;
 
 	private String rik = null;
 	private String misac = null;
+	private String misac1 = null;
 	private String den = null;
 
 	private String s_NazvaPod;
@@ -109,9 +110,9 @@ public class NovaPodia extends JFrame {
 
 	SliderListener slider = new SliderListener();
 
-	private Scanner scanner_Name;
-	private String[][] ss_Name = new String[1][3];
-	private String s_Name;
+	private static Scanner scanner_Name;
+	private static String[][] ss_Name = new String[1][4];
+	private static String s_Name;
 
 	private JLabel l_koment_ZajnatujChas;
 	private Scanner sc_k_podij;
@@ -177,10 +178,10 @@ public class NovaPodia extends JFrame {
 		getContentPane().add(l_NazvaPod);
 
 		UtilDateModel model = new UtilDateModel();
-		model.setDate(1900 + date.getYear(), date.getMonth(), 3 + date.getDay());
+		model.setDate(1900 + date.getYear(), date.getMonth(), 10 + date.getDay());
 		model.setSelected(true);
 
-		// System.out.println(date.getDay());
+//		 System.out.println(date.getDay());
 
 		JDatePanelImpl datePanel = new JDatePanelImpl(model);
 
@@ -195,33 +196,12 @@ public class NovaPodia extends JFrame {
 		getContentPane().add(datePicker);
 
 		Calendar calendar = Calendar.getInstance();
-
 		year = calendar.get(Calendar.YEAR);
 		month = calendar.get(Calendar.MONTH) + 1;
 		day = calendar.get(Calendar.DAY_OF_MONTH);
-
-		try {
-			scanner_Korustuvac = new Scanner(new File("res/TumcasoviFaylu/Korustuvac.txt"));
-		} catch (Exception e) {
-			JOptionPane.showMessageDialog(null, "Помилка введення");
-		}
-
-		while (scanner_Korustuvac.hasNext()) {
-			for (int row = 0; row < Reading_PIP.length; row++) {
-				for (int col = 0; col < Reading_PIP[row].length; col++) {
-					Reading_PIP[row][col] = scanner_Korustuvac.next();
-					if (col == 0) {
-						Reading_Name = Reading_PIP[row][col];
-					}
-					if (col == 1) {
-						Reading_Prizvusko = Reading_PIP[row][col];
-					}
-				}
-			}
-		}
-
-		PIP = Reading_Name + " " + Reading_Prizvusko;
-
+ 
+		PIP = NovaPodia.ReturnPIP();
+		
 		b_Gotovo = new JButton("Готово");
 		b_Gotovo.setFont(new Font("Impact", Font.PLAIN, 25));
 		b_Gotovo.addActionListener(new ActionListener() {
@@ -590,6 +570,8 @@ public class NovaPodia extends JFrame {
 
 						int kk = 0;
 
+						misac1 = misac ;
+						
 						for (int i = 0; i < 24; i++) {
 							for (int j = 0; j < 60; j++) {
 								String put = "res/Dani/" + PIP + "/" + rik + "/" + misac + "/" + den + "/" + i + "." + j
@@ -598,8 +580,48 @@ public class NovaPodia extends JFrame {
 
 								if (file.exists()) {
 									kk++;
+									
+									switch (misac) {
+									case "Jan":
+										misac = "Січ" ;
+										break;
+									case "Feb":
+										misac = "Лют" ;
+										break;
+									case "Mar":
+										misac = "Бер" ;
+										break;
+									case "Apr":
+										misac = "Квіт" ;
+										break;
+									case "May":
+										misac = "Трав" ;
+										break;
+									case "Jun":
+										misac = "Черв" ;
+										break;
+									case "Jul":
+										misac = "Лип" ;
+										break;
+									case "Aug":
+										misac = "Серп" ;
+										break;
+									case "Sep":
+										misac = "Вер" ;
+										break;
+									case "Oct":
+										misac = "Жов" ;
+										break;
+									case "Nov":
+										misac = "Лист" ;
+										break;
+									case "Dec":
+										misac = "Груд" ;
+										break;
+									}
 
-									OpenFile(put);
+//									new OpenFile(put);
+									s_Name = NovaPodia.OpenFile(put);
 
 									switch (kk) {
 									case 1:
@@ -669,6 +691,7 @@ public class NovaPodia extends JFrame {
 										j = 70;
 										break;
 									}
+									misac = misac1 ;
 								}
 							}
 						}
@@ -887,7 +910,7 @@ public class NovaPodia extends JFrame {
 		} catch (Exception e) {
 			JOptionPane.showMessageDialog(null, "System Error");
 		}
-		formatter_dani.format(Name + " " + Truvalist + " " + Pruoritet);
+		formatter_dani.format(Name + " " + Truvalist + " " + Pruoritet + " " + "-");
 		formatter_dani.close();
 
 		// System.out.println(s_NazvaPod + " " + s_TruvalistPod + " " +
@@ -930,7 +953,7 @@ public class NovaPodia extends JFrame {
 		}
 	}
 
-	String OpenFile(String file) {
+	public static String OpenFile(String file) {
 		try {
 			scanner_Name = new Scanner(new File(file));
 		} catch (Exception e) {
@@ -949,6 +972,33 @@ public class NovaPodia extends JFrame {
 		}
 		scanner_Name.close();
 		return s_Name;
+	}
+	
+	public static String ReturnPIP() {
+		try {
+			scanner_Korustuvac = new Scanner(new File("res/TumcasoviFaylu/Korustuvac.txt"));
+		} catch (Exception e) {
+			JOptionPane.showMessageDialog(null, "Помилка введення");
+		}
 
+		while (scanner_Korustuvac.hasNext()) {
+			for (int row = 0; row < Reading_PIP.length; row++) {
+				for (int col = 0; col < Reading_PIP[row].length; col++) {
+					Reading_PIP[row][col] = scanner_Korustuvac.next();
+					if (col == 0) {
+						Reading_Name = Reading_PIP[row][col];
+					}
+					if (col == 1) {
+						Reading_Prizvusko = Reading_PIP[row][col];
+					}
+				}
+			}
+		}
+
+		PIP = Reading_Name + " " + Reading_Prizvusko;
+		
+		scanner_Korustuvac.close();
+		
+		return PIP;
 	}
 }
