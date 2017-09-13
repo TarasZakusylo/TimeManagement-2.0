@@ -146,13 +146,13 @@ public class Menu extends JFrame {
 
 		l_kartunka = new JLabel("");
 		l_kartunka.setHorizontalAlignment(SwingConstants.CENTER);
-		l_kartunka.setIcon(new ImageIcon("C:\\Users\\ZakkZakk\\Desktop\\vremya-dengi.png"));
+		l_kartunka.setIcon(new ImageIcon("res/kartunka/kartunka_Menu.png"));
 		l_kartunka.setBounds(-1, 263, 995, 302);
 		getContentPane().add(l_kartunka);
 
 		l_fon = new JLabel("");
 		l_fon.setForeground(Color.WHITE);
-		l_fon.setIcon(new ImageIcon("C:\\Users\\ZakkZakk\\Desktop\\fon_Avtoruzacia.jpg"));
+		l_fon.setIcon(new ImageIcon("res/fon/fon_Avtoruzacia.jpg"));
 		l_fon.setBounds(-1, 0, 995, 565);
 		getContentPane().add(l_fon);
 

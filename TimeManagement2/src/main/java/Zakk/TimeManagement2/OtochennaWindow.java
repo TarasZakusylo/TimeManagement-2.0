@@ -363,7 +363,7 @@ public class OtochennaWindow extends JFrame {
 		panel_vidkkrutu.add(b_vuvestuProfil);
 		
 		l_fon2 = new JLabel("");
-		l_fon2.setIcon(new ImageIcon("C:\\Users\\ZakkZakk\\Desktop\\fon_Avtoruzacia – копія.jpg"));
+		l_fon2.setIcon(new ImageIcon("res/fon/fon_Otochenna.jpg"));
 		l_fon2.setBounds(0, 0, 989, 486);
 		panel_vidkkrutu.add(l_fon2);
 
