@@ -77,7 +77,7 @@ public class Menu extends JFrame {
 		b_Prognozyvanna.setForeground(new Color(0, 0, 0));
 		b_Prognozyvanna.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new Prognozyvanna("Times");
+				new PrognozyvannaMenu("Times");
 				setVisible(false);
 			}
 		});

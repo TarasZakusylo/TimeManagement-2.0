@@ -11,7 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
-public class Otocenna extends JFrame {
+public class PrognizuvannaZavantagenosti extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 
@@ -20,7 +20,7 @@ public class Otocenna extends JFrame {
 	private JLabel l_komentar;
 	private JButton b_Menu;
 
-	public Otocenna(String s) {
+	public PrognizuvannaZavantagenosti(String s) {
 		super(s);
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -11,7 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 
-public class Prognozyvanna extends JFrame {
+public class PtognozuvannaPodij extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 
@@ -20,7 +20,7 @@ public class Prognozyvanna extends JFrame {
 	private JLabel l_komentar;
 	private JButton b_Menu;
 
-	public Prognozyvanna(String s) {
+	public PtognozuvannaPodij(String s) {
 		super(s);
 
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
