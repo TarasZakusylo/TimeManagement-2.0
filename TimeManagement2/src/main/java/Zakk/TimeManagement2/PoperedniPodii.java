@@ -167,7 +167,13 @@ public class PoperedniPodii extends JFrame {
 		setLocationRelativeTo(null);
 		getContentPane().setLayout(null);
 
-		l_komentar = new JLabel("Оберіть, буль ласка, дату, що Вас цікавить :");
+		Calendar calendar = Calendar.getInstance();
+
+		year = calendar.get(Calendar.YEAR);
+		month = calendar.get(Calendar.MONTH) + 1;
+		day = calendar.get(Calendar.DAY_OF_MONTH);
+
+		l_komentar = new JLabel("Оберіть, будь ласка, дату, що Вас цікавить :");
 		l_komentar.setForeground(new Color(165, 42, 42));
 		l_komentar.setHorizontalAlignment(SwingConstants.CENTER);
 		l_komentar.setFont(new Font("Times New Roman", Font.ITALIC, 30));
@@ -187,7 +193,9 @@ public class PoperedniPodii extends JFrame {
 		getContentPane().add(b_Menu);
 
 		UtilDateModel model = new UtilDateModel();
-		model.setDate(1900 + date.getYear(), date.getMonth(), 10 + date.getDay());
+		// model.setDate(1900 + date.getYear(), date.getMonth(), 10 + date.getDay());
+		model.setDate(year, month - 1, day);
+
 		model.setSelected(true);
 
 		// System.out.println(date.getDay());
@@ -200,15 +208,9 @@ public class PoperedniPodii extends JFrame {
 		datePicker.getJFormattedTextField().setHorizontalAlignment(SwingConstants.CENTER);
 
 		datePicker.setSize(230, 27);
-		datePicker.setLocation(377, 90);
+		datePicker.setLocation(296, 90);
 
 		getContentPane().add(datePicker);
-
-		Calendar calendar = Calendar.getInstance();
-
-		year = calendar.get(Calendar.YEAR);
-		month = calendar.get(Calendar.MONTH) + 1;
-		day = calendar.get(Calendar.DAY_OF_MONTH);
 
 		PIP = NovaPodia.ReturnPIP();
 
@@ -314,14 +316,15 @@ public class PoperedniPodii extends JFrame {
 		l_nazva9.setBounds(199, 527, 118, 27);
 		getContentPane().add(l_nazva9);
 
-		// final JButton b_Gotovo = new JButton("Готово");
-		// b_Gotovo.addActionListener(new ActionListener() {
-		// public void actionPerformed(ActionEvent arg0) {
-		// b_Gotovo();
-		// }
-		// });
-		// b_Gotovo.setBounds(549, 92, 97, 25);
-		// getContentPane().add(b_Gotovo);
+		final JButton b_Gotovo = new JButton("Готово");
+		b_Gotovo.setFont(new Font("Impact", Font.PLAIN, 20));
+		b_Gotovo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				b_Gotovo();
+			}
+		});
+		b_Gotovo.setBounds(566, 87, 110, 30);
+		getContentPane().add(b_Gotovo);
 
 		l_HapkaData = new JLabel("Дата :");
 		l_HapkaData.setHorizontalAlignment(SwingConstants.CENTER);
@@ -727,12 +730,12 @@ public class PoperedniPodii extends JFrame {
 		getContentPane().add(l_kartunka);
 
 		l_fon = new JLabel("");
-		l_fon.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseEntered(MouseEvent e) {
-				b_Gotovo();
-			}
-		});
+//		l_fon.addMouseListener(new MouseAdapter() {
+//			@Override
+//			public void mouseEntered(MouseEvent e) {
+//				b_Gotovo();
+//			}
+//		});
 		// l_fon.setIcon(new
 		// ImageIcon("C:\\Users\\ZakkZakk\\Desktop\\fon_Avtoruzacia.jpg"));
 		l_fon.setBounds(0, 0, 994, 566);

@@ -83,7 +83,7 @@ public class Calendar extends JFrame implements ItemListener {
 		l_kartunka.setIcon(new ImageIcon("res/kartunka/kartunta_Calendar.png"));
 		getContentPane().add(l_kartunka);
 
-		l_komentar = new JLabel("Оберіть, буль ласка, дату, що Вас цікавить :");
+		l_komentar = new JLabel("Оберіть, будь ласка, дату, що Вас цікавить :");
 		l_komentar.setForeground(new Color(165, 42, 42));
 		l_komentar.setHorizontalAlignment(SwingConstants.CENTER);
 		l_komentar.setFont(new Font("Times New Roman", Font.ITALIC, 30));

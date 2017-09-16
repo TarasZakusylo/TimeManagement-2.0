@@ -19,7 +19,7 @@ public class PrognozyvannaMenu extends JFrame {
 	private JLabel l_kartunka;
 	private JButton b_Menu;
 	private JButton b_PrognizuvannaZavantagenosti;
-	private JButton b_PtognozuvannaPodij;
+	private JButton b_PrognozuvannaPodij;
 
 	public PrognozyvannaMenu(String s) {
 		super(s);
@@ -59,16 +59,16 @@ public class PrognozyvannaMenu extends JFrame {
 		b_PrognizuvannaZavantagenosti.setBounds(12, 420, 482, 42);
 		getContentPane().add(b_PrognizuvannaZavantagenosti);
 
-		b_PtognozuvannaPodij = new JButton("Прогнозування подій");
-		b_PtognozuvannaPodij.addActionListener(new ActionListener() {
+		b_PrognozuvannaPodij = new JButton("Прогнозування подій");
+		b_PrognozuvannaPodij.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new PtognozuvannaPodij("Times");
+				new PrognozuvannaPodij("Times");
 				setVisible(false);
 			}
 		});
-		b_PtognozuvannaPodij.setFont(new Font("Impact", Font.PLAIN, 25));
-		b_PtognozuvannaPodij.setBounds(494, 420, 485, 42);
-		getContentPane().add(b_PtognozuvannaPodij);
+		b_PrognozuvannaPodij.setFont(new Font("Impact", Font.PLAIN, 25));
+		b_PrognozuvannaPodij.setBounds(494, 420, 485, 42);
+		getContentPane().add(b_PrognozuvannaPodij);
 
 		l_fon = new JLabel("");
 		l_fon.setBounds(0, 0, 994, 566);

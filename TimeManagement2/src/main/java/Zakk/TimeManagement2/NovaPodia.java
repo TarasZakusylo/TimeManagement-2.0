@@ -131,7 +131,12 @@ public class NovaPodia extends JFrame {
 		setLocationRelativeTo(null);
 		getContentPane().setLayout(null);
 
-		l_Hapka = new JLabel("Вкажіть, буль ласка, параметри події :");
+		Calendar calendar = Calendar.getInstance();
+		year = calendar.get(Calendar.YEAR);
+		month = calendar.get(Calendar.MONTH) + 1;
+		day = calendar.get(Calendar.DAY_OF_MONTH);
+		
+		l_Hapka = new JLabel("Вкажіть, будь ласка, параметри події :");
 		l_Hapka.setForeground(new Color(165, 42, 42));
 		l_Hapka.setHorizontalAlignment(SwingConstants.CENTER);
 		l_Hapka.setFont(new Font("Times New Roman", Font.ITALIC, 30));
@@ -178,7 +183,8 @@ public class NovaPodia extends JFrame {
 		getContentPane().add(l_NazvaPod);
 
 		UtilDateModel model = new UtilDateModel();
-		model.setDate(1900 + date.getYear(), date.getMonth(), 10 + date.getDay());
+//		model.setDate(1900 + date.getYear(), date.getMonth(), 10 + date.getDay());
+		model.setDate(year, month-1, day);
 		model.setSelected(true);
 
 //		 System.out.println(date.getDay());
@@ -194,18 +200,12 @@ public class NovaPodia extends JFrame {
 		datePicker.setLocation(162, 185);
 
 		getContentPane().add(datePicker);
-
-		Calendar calendar = Calendar.getInstance();
-		year = calendar.get(Calendar.YEAR);
-		month = calendar.get(Calendar.MONTH) + 1;
-		day = calendar.get(Calendar.DAY_OF_MONTH);
  
 		PIP = NovaPodia.ReturnPIP();
 		
 		b_Gotovo = new JButton("Готово");
 		b_Gotovo.setFont(new Font("Impact", Font.PLAIN, 25));
 		b_Gotovo.addActionListener(new ActionListener() {
-
 			public void actionPerformed(ActionEvent arg0) {
 				// for UtilDateModel, the value returned is of type java.util.Date
 				Date selectedDate = (Date) datePicker.getModel().getValue();
