@@ -78,7 +78,7 @@ public class NovaPodia extends JFrame {
 	private int i_slider_Pruoritet = 1;
 
 	private Formatter formatter_dani;
-	private static  Scanner scanner_Korustuvac;
+	private static Scanner scanner_Korustuvac;
 	private static String[][] Reading_PIP = new String[1][2];
 	private static String Reading_Name;
 	private static String Reading_Prizvusko;
@@ -120,8 +120,6 @@ public class NovaPodia extends JFrame {
 	private int i_k_podij = 0;
 	private Formatter formatter_k_podij;
 
-	@SuppressWarnings("deprecation")
-
 	public NovaPodia(String s) {
 		super(s);
 
@@ -135,7 +133,7 @@ public class NovaPodia extends JFrame {
 		year = calendar.get(Calendar.YEAR);
 		month = calendar.get(Calendar.MONTH) + 1;
 		day = calendar.get(Calendar.DAY_OF_MONTH);
-		
+
 		l_Hapka = new JLabel("Вкажіть, будь ласка, параметри події :");
 		l_Hapka.setForeground(new Color(165, 42, 42));
 		l_Hapka.setHorizontalAlignment(SwingConstants.CENTER);
@@ -183,11 +181,11 @@ public class NovaPodia extends JFrame {
 		getContentPane().add(l_NazvaPod);
 
 		UtilDateModel model = new UtilDateModel();
-//		model.setDate(1900 + date.getYear(), date.getMonth(), 10 + date.getDay());
-		model.setDate(year, month-1, day);
+		// model.setDate(1900 + date.getYear(), date.getMonth(), 10 + date.getDay());
+		model.setDate(year, month - 1, day);
 		model.setSelected(true);
 
-//		 System.out.println(date.getDay());
+		// System.out.println(date.getDay());
 
 		JDatePanelImpl datePanel = new JDatePanelImpl(model);
 
@@ -200,9 +198,9 @@ public class NovaPodia extends JFrame {
 		datePicker.setLocation(162, 185);
 
 		getContentPane().add(datePicker);
- 
+
 		PIP = NovaPodia.ReturnPIP();
-		
+
 		b_Gotovo = new JButton("Готово");
 		b_Gotovo.setFont(new Font("Impact", Font.PLAIN, 25));
 		b_Gotovo.addActionListener(new ActionListener() {
@@ -570,8 +568,8 @@ public class NovaPodia extends JFrame {
 
 						int kk = 0;
 
-						misac1 = misac ;
-						
+						misac1 = misac;
+
 						for (int i = 0; i < 24; i++) {
 							for (int j = 0; j < 60; j++) {
 								String put = "res/Dani/" + PIP + "/" + rik + "/" + misac + "/" + den + "/" + i + "." + j
@@ -580,47 +578,47 @@ public class NovaPodia extends JFrame {
 
 								if (file.exists()) {
 									kk++;
-									
+
 									switch (misac) {
 									case "Jan":
-										misac = "Січ" ;
+										misac = "Січ";
 										break;
 									case "Feb":
-										misac = "Лют" ;
+										misac = "Лют";
 										break;
 									case "Mar":
-										misac = "Бер" ;
+										misac = "Бер";
 										break;
 									case "Apr":
-										misac = "Квіт" ;
+										misac = "Квіт";
 										break;
 									case "May":
-										misac = "Трав" ;
+										misac = "Трав";
 										break;
 									case "Jun":
-										misac = "Черв" ;
+										misac = "Черв";
 										break;
 									case "Jul":
-										misac = "Лип" ;
+										misac = "Лип";
 										break;
 									case "Aug":
-										misac = "Серп" ;
+										misac = "Серп";
 										break;
 									case "Sep":
-										misac = "Вер" ;
+										misac = "Вер";
 										break;
 									case "Oct":
-										misac = "Жов" ;
+										misac = "Жов";
 										break;
 									case "Nov":
-										misac = "Лист" ;
+										misac = "Лист";
 										break;
 									case "Dec":
-										misac = "Груд" ;
+										misac = "Груд";
 										break;
 									}
 
-//									new OpenFile(put);
+									// new OpenFile(put);
 									s_Name = NovaPodia.OpenFile(put);
 
 									switch (kk) {
@@ -691,7 +689,7 @@ public class NovaPodia extends JFrame {
 										j = 70;
 										break;
 									}
-									misac = misac1 ;
+									misac = misac1;
 								}
 							}
 						}
@@ -973,7 +971,7 @@ public class NovaPodia extends JFrame {
 		scanner_Name.close();
 		return s_Name;
 	}
-	
+
 	public static String ReturnPIP() {
 		try {
 			scanner_Korustuvac = new Scanner(new File("res/TumcasoviFaylu/Korustuvac.txt"));
@@ -996,9 +994,9 @@ public class NovaPodia extends JFrame {
 		}
 
 		PIP = Reading_Name + " " + Reading_Prizvusko;
-		
+
 		scanner_Korustuvac.close();
-		
+
 		return PIP;
 	}
 }

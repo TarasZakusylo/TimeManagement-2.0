@@ -156,8 +156,6 @@ public class PoperedniPodii extends JFrame {
 	private static String Reading_Prioritet;
 	private static String s_vesFail;
 
-	@SuppressWarnings("deprecation")
-
 	public PoperedniPodii(String s) {
 		super(s);
 
