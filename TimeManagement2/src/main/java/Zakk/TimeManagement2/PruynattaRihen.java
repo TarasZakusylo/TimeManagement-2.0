@@ -25,7 +25,6 @@ import com.xeiam.xchart.Chart;
 import com.xeiam.xchart.ChartBuilder;
 import com.xeiam.xchart.StyleManager.ChartType;
 import com.xeiam.xchart.StyleManager.LegendPosition;
-import com.xeiam.xchart.SwingWrapper;
 
 public class PruynattaRihen extends JFrame {
 
@@ -522,7 +521,7 @@ public class PruynattaRihen extends JFrame {
 					Result1[1] = q2;
 					Result2[2] = q3;
 
-					Chart chart = new ChartBuilder().chartType(ChartType.Area).width(800).height(600)
+					Chart chart = new ChartBuilder().chartType(ChartType.Area).width(1025).height(590)
 							.title("Діаграма прийняття рішень")
 							.xAxisTitle("1 -Відмінити (перенести) " + s_Nazva1 + ",     2 -Відмінити (перенести) "
 									+ s_Nazva2 + ",     3 - виконувати обидві події одночасно(поетапно)")
@@ -542,10 +541,13 @@ public class PruynattaRihen extends JFrame {
 					File Path = new File("C:\\Users\\" + s_UserName + "\\Documents\\Times\\" + PIP + "\\Rihenna\\");
 					Path.mkdirs();
 
-					new SwingWrapper(chart).displayChart();
+					// new SwingWrapper(chart).displayChart();
+
 					try {
 						BitmapEncoder.savePNGWithDPI(chart, "C:\\Users\\" + s_UserName + "\\Documents\\Times\\" + PIP
-								+ "\\Rihenna\\" + s_Nazva1 + " vs " + s_Nazva2 + ".png", 400);
+								+ "\\Rihenna\\" + s_Nazva1 + " vs " + s_Nazva2 + ".png", 70);
+						new PruynattaRihenGrafik("C:\\Users\\" + s_UserName + "\\Documents\\Times\\" + PIP
+								+ "\\Rihenna\\" + s_Nazva1 + " vs " + s_Nazva2 + ".png");
 						JOptionPane.showMessageDialog(null, "Результати записано у \"Документах\"");
 					} catch (IOException eq) {
 					}
